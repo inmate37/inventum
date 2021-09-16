@@ -1,0 +1,2 @@
+# inventum
+Singlepage | inventum.kz
