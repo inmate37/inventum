@@ -1,0 +1,863 @@
+// TABS
+// FOLD_BUTTONS
+// STANDARD_SCROLLBARS
+//
+// OVERLAY_SCROLLBARS
+// MINIMAP
+// DIALOG_ABOUT
+// PROGRESS_BAR
+// LABELS
+// TOOLTIP
+// STATUS_BAR
+//
+// SIDEBAR
+// SIDEBAR_GENERAL_FILE_ICONS
+//
+// STANDARD_TEXT_BUTTONS
+// TEXT_INPUT_FIELD
+// PANEL_BACKGROUNDS
+// MINI_QUICK_PANEL (Win+Shift+P)
+// QUICK_PANEL (Win+P)
+// CODE_COMPLETING_DROPDOWN
+// BOTTOM_PANEL_BUTTONS
+// BOTTOM_PANEL_ICONS__GROUP_1
+// BOTTOM_PANEL_ICONS__GROUP_1__EXTENDED__FIND_IN_FILES
+// BOTTOM_PANEL_ICONS__GROUP_2
+// BOTTOM_PANEL_ICONS__GROUP_3
+// BOTTOM_PANEL_ICONS__GROUP_4
+[
+    //================================================================================================================|
+    // TABS
+    //
+    // Set
+    {
+        "class": "tabset_control",
+        "layer0.tint": [0,0,0],
+        "layer0.inner_margin": [0,0],
+        "layer0.opacity": {"target": 1.0, "speed": 10.0, "interpolation": "smoothstep"},
+        "content_margin": [0,0],
+        "tab_overlap": 0,
+        "tab_width": 100,
+        "tab_min_width": 50,
+        "tab_height": 16, // Толщина вкладки
+        "mouse_wheel_switch": true
+    },
+    // Element
+    {
+        "class": "tab_control",
+        "max_margin_trim": 0,
+        "hit_test_level": 0,
+        "content_margin": [0,0],
+        "layer0.texture": "Seti_UI/Main/tab-inactive.png",
+        "layer0.inner_margin": 11,
+        "layer0.opacity": 1
+    },
+    {
+        "class": "tab_control",
+        "attributes": ["hover"],
+        "layer0.texture": "Seti_UI/Main/tab-active.png",
+        "layer0.opacity": 1
+    },
+    {
+        "class": "tab_control",
+        "attributes": ["selected"],
+        "layer0.texture": "Seti_UI/Main/tab-active.png",
+        "layer0.opacity": 1
+    },
+    // Close button
+    {
+        "class": "tab_close_button",
+        "parents": [{"class": "tab_control", "attributes": ["dirty"]}],
+        "layer1.texture": "Seti_UI/Main/highlight@2x.png",
+        "layer1.opacity": 1,
+        "layer0.opacity": 0,
+        "content_margin": [0,-4,16,15],
+        "layer1.tint": [252,226,5]//BUMBLEBEE
+    },
+    // Неактивная вкладка
+    {
+        "class": "tab_label",
+        "font.size": 7,
+        "font.bold": true,
+        "fg": [248,248,255]//GHOST_WHITE
+    },
+    // Неактивная вкладка | Выбранная
+    {
+        "class": "tab_label",
+        "parents": [{"class": "tab_control","attributes": ["selected"]}],
+        "fg": [252,226,5]// BUMBLEBEE
+    },
+    // Неактивная вкладка | Наведенная
+    {
+        "class": "tab_label",
+        "parents": [{"class": "tab_control", "attributes": ["hover"]}],
+        "fg": [252,226,5]// BUMBLEBEE
+    },
+    // Неактивная вкладка | ???
+    {
+        "class": "tab_label",
+        "parents": [{"class": "tab_control", "attributes": ["transient"]}],
+        "fg": [0,0,0]
+    },
+    // Dropdown
+    {"class": "show_tabs_dropdown_button", "content_margin": [0,0]},
+    // Scroll-left
+    {"class": "scroll_tabs_left_button", "content_margin": [0,0]},
+    // Scroll-right
+    {"class": "scroll_tabs_right_button", "content_margin": [0,0]},
+
+
+    //================================================================================================================|
+    // FOLD_BUTTONS
+    //
+    {
+        "class": "fold_button_control",
+        "layer0.texture": "Seti_UI/Main/fold-closed@2x.png",
+        "layer0.opacity": {"target": 0.5, "speed": 10.0, "interpolation": "smoothstep"},
+        "layer0.inner_margin": 0,
+        "layer0.tint": [0,0,0],
+        "content_margin": 10
+    },
+    {
+        "class": "fold_button_control",
+        "attributes": ["hover"],
+        "layer0.opacity": {"target": 1, "speed": 10.0, "interpolation": "smoothstep"}
+    },
+    {
+        "class": "fold_button_control",
+        "attributes": ["expanded"],
+        "layer0.texture": "Seti_UI/Main/fold-open@2x.png"
+    },
+    {
+        "class": "fold_button_control",
+        "attributes": ["expanded","hover"]
+    },
+    //================================================================================================================|
+    // STANDARD_SCROLLBARS
+    //
+    // Standard vertical scroll bar
+    {
+        "class": "scroll_bar_control",
+        "layer0.tint": [255,255,255],
+        "layer0.opacity": {"target": 1.0, "speed": 10.0, "interpolation": "smoothstep"},
+        "layer0.inner_margin": 0,
+        "blur": false
+    },
+    {
+        "class": "scroll_bar_control",
+        "parents": [{"class": "overlay_control"}],
+        "layer0.tint": [255,255,255],
+        "layer0.opacity": {"target": 1.0, "speed": 10.0, "interpolation": "smoothstep"},
+        "layer0.inner_margin": 0,
+        "blur": false
+    },
+    // Standard horizontal scroll bar
+    {
+        "class": "scroll_bar_control",
+        "attributes": ["horizontal"],
+        "layer0.tint": [255,255,255],
+        "layer0.inner_margin": 0,
+        "blur": false
+    },
+    {
+        "class": "scroll_bar_control",
+        "attributes": ["horizontal"],
+        "parents": [{"class": "overlay_control"}],
+        "layer0.tint": [255,255,255],
+        "layer0.opacity": {"target": 1.0, "speed": 10.0, "interpolation": "smoothstep"},
+        "layer0.inner_margin": 0,
+        "blur": false
+    },
+    // Standard scroll bar corner
+    {
+        "class": "scroll_corner_control",
+        "layer0.tint":[0,0,0],
+        "layer0.opacity": {"target": 1.0, "speed": 10.0, "interpolation": "smoothstep"},
+        "layer0.inner_margin": 0
+    },
+    // Standard vertical scroll puck
+    {
+        "class": "puck_control",
+        "layer0.tint":[30,30,30],
+        "layer0.opacity": {"target": 1.0, "speed": 10.0, "interpolation": "smoothstep"},
+        "layer0.inner_margin": 0,
+        "content_margin": [0,0],
+        "blur": false
+    },
+    // Standard horizontal scroll puck
+    {
+        "class": "puck_control",
+        "attributes": ["horizontal"],
+        "layer0.tint":[30,30,30],
+        "layer0.inner_margin": 0,
+        "content_margin": [0,0],
+        "blur": false
+    },
+    //================================================================================================================|sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+    //OVERLAY_SCROLLBARS
+    //
+    // Overlay vertical scroll bar
+    {
+        "class": "scroll_bar_control",
+        "layer0.tint":[13,16,17],
+        "layer0.inner_margin": [5,0]
+    },
+    // Overlay horizontal scroll bar
+    {
+        "class": "scroll_bar_control",
+        "attributes": ["horizontal"],
+        "layer0.tint":[13,16,17],
+        "layer0.inner_margin": [5,0]
+    },
+    // Overlay vertical puck
+    {
+        "class": "puck_control",
+        "layer0.inner_margin": [0,0],
+        "content_margin": [5,0]
+    },
+    // Overlay horizontal puck
+    {
+        "class": "puck_control",
+        "attributes": ["horizontal"],
+        "layer0.inner_margin": [0,0],
+        "content_margin": [0,5]
+    },
+    //================================================================================================================|
+    // MINIMAP
+    //
+    {
+        "class": "minimap_control",
+        "viewport_color": [0,0,0,150]
+    },
+    {
+        "class": "minimap_control",
+        "attributes": ["hover"],
+        "viewport_color": [0,0,0,200]
+    },
+    //================================================================================================================|
+    // DIALOG_ABOUT
+    //
+    {
+        "class": "dialog",
+        "layer0.tint": [13,16,17],
+        "layer0.opacity": {"target": 1.0, "speed": 10.0, "interpolation": "smoothstep"}
+    },
+    //================================================================================================================|
+    // PROGRESS_BAR
+    //
+
+    {
+        "class": "progress_bar_control",  // = sheet_container_control
+        "layer0.tint": [25,31,33],
+        "layer0.opacity": {"target": 1.0, "speed": 10.0, "interpolation": "smoothstep"}
+    },
+    {
+        "class": "progress_gauge_control",
+        "layer0.opacity": {"target": 1.0, "speed": 10.0, "interpolation": "smoothstep"},
+        "layer0.tint": [79,153,211],
+        "content_margin": [0, 6]
+    },
+    //================================================================================================================|
+    // LABELS
+    //
+    // General labels
+    {
+        "class": "label_control",
+        "color": [0,0,0]
+    },
+    // Text field labels
+    {
+        "class": "label_control",
+        "parents": [{"class": "panel_control"}]
+    },
+    // Button labels
+    {
+        "class": "label_control",
+        "parents": [{"class": "button_control"}]
+    },
+    //================================================================================================================|
+    // TOOLTIP
+    //
+    // Tooltip container
+    {
+        "class": "tool_tip_control",
+        "layer0.tint": [22,31,39],
+        "layer0.inner_margin": 1,
+        "layer0.opacity": {"target": 1.0, "speed": 10.0, "interpolation": "smoothstep"},
+        "content_margin": [10, 8]
+    },
+    // Tooltip content
+    {
+        "class": "tool_tip_label_control",
+        "color": [138,177,194],
+        "font.bold": false,
+        "font.size": 10
+    },
+    //================================================================================================================|
+    // STATUS_BAR
+    //
+    // Container
+    {
+        "class": "status_bar",
+        "layer0.tint": [0,0,0],
+        "layer0.opacity": {"target": 1.0, "speed": 10.0, "interpolation": "smoothstep"}
+    },
+    // Button
+    {
+        "class": "status_button",
+        "min_size": [55, 0]
+    },
+    // Label
+    {
+        "class": "label_control",
+        "parents": [{"class": "status_bar"}],
+        "font.bold": true,
+        "font.size": 10,
+        "color": [255,8,0]//CANDY_APPLE
+    },
+    // Желтый кружок на нижней вызываемой панели | ALT + W
+    {
+        "class": "panel_button_control",
+        "layer0.texture": "Seti_UI/Main/circle@2x.png",
+        "layer0.opacity": {"target": 1.0, "speed": 10.0, "interpolation": "smoothstep"},
+        "content_margin": [10, 10],
+        "layer0.tint": [252,226,5]//BUMBLEBEE
+    },
+    //================================================================================================================|
+    // SIDEBAR
+    //
+    // Container
+    {
+        "class": "sidebar_container",
+        "layer0.tint": [0,0,0],
+        "layer0.inner_margin": [0, 0, 0, 0],
+        "layer1.texture": "Seti_UI/Main/sidebar/sidebar_heading_small.png",
+        "layer1.opacity": {"target": 1.0, "speed": 10.0, "interpolation": "smoothstep"},
+        "layer1.inner_margin": [120, 35, 0, 0],
+        "content_margin": [0, 50, 0, 0]
+    },
+    // Tree || Entries
+    {
+        "class": "sidebar_tree",
+        "layer0.tint": [0,0,0],
+        "layer0.opacity": {"target": 1.0, "speed": 10.0, "interpolation": "smoothstep"},
+        "indent_offset": 0,
+        "indent": 10,
+        "row_padding": [5,0],
+        "indent_top_level": false
+    },
+    // 'Gear-Wheel-Icon' Animation
+    {
+        "class": "sidebar_container",
+        "layer0.tint": [0,0,0],
+        "layer0.inner_margin": [0, 0, 0, 0],
+        "layer1.texture": {
+            "keyframes": [
+                "Seti_UI/Main/sidebar/sidebar_heading_alt-h8.png",
+                "Seti_UI/Main/sidebar/sidebar_heading_alt-h7.png",
+                "Seti_UI/Main/sidebar/sidebar_heading_alt-h6.png",
+                "Seti_UI/Main/sidebar/sidebar_heading_alt-h5.png",
+                "Seti_UI/Main/sidebar/sidebar_heading_alt-h4.png",
+                "Seti_UI/Main/sidebar/sidebar_heading_alt-h3.png",
+                "Seti_UI/Main/sidebar/sidebar_heading_alt-h2.png",
+                "Seti_UI/Main/sidebar/sidebar_heading_alt-h1.png",
+                "Seti_UI/Main/sidebar/sidebar_heading_alt-h0.png"
+            ],
+            "loop": true,
+            "frame_time": 0.03
+        },
+        "layer1.opacity": {"target": 1.0, "speed": 10.0, "interpolation": "smoothstep"},
+        "layer1.inner_margin": [150, 50, -150, 0],
+        "content_margin": [0, 55, 0, 0]
+    },
+    {
+        "class": "sidebar_container",
+        "attributes": ["hover"],
+        "layer1.texture": {
+            "keyframes": [
+                "Seti_UI/Main/sidebar/sidebar_heading_alt-h0.png",
+                "Seti_UI/Main/sidebar/sidebar_heading_alt-h1.png",
+                "Seti_UI/Main/sidebar/sidebar_heading_alt-h2.png",
+                "Seti_UI/Main/sidebar/sidebar_heading_alt-h3.png",
+                "Seti_UI/Main/sidebar/sidebar_heading_alt-h4.png",
+                "Seti_UI/Main/sidebar/sidebar_heading_alt-h5.png",
+                "Seti_UI/Main/sidebar/sidebar_heading_alt-h6.png",
+                "Seti_UI/Main/sidebar/sidebar_heading_alt-h7.png",
+                "Seti_UI/Main/sidebar/sidebar_heading_alt-h8.png"
+            ],
+            "loop": true,
+            "frame_time": 0.01
+        },
+        "layer1.opacity": {"target": 1.0, "speed": 10.0, "interpolation": "smoothstep"},
+        "layer1.inner_margin": [150, 50, -150, 0],
+        "content_margin": [0, 55, 0, 0]
+    },
+    // Selected files background
+    {
+        "class": "tree_row",
+        "layer0.opacity": {"target": 0.0, "speed": 10.0, "interpolation": "smoothstep"},
+        "layer0.tint": [248,248,255]//GHOST_WHITE
+    },
+    {
+        "class": "tree_row",
+        "attributes": ["selected"],
+        "layer0.opacity": {"target": 1.0, "speed": 10.0, "interpolation": "smoothstep"}
+    },
+    // Files
+    {
+        "class": "sidebar_label",
+        "font.bold": true,
+        "font.size": 10,
+        "color": [255,8,0]//CANDY_APPLE
+    },
+    {
+        "class": "sidebar_label",
+        "parents": [{"class": "tree_row", "attributes": ["hover"]}],
+        "color": [248,248,255]//GHOST_WHITE
+    },
+    // Open files entry selected
+    {
+        "class": "sidebar_label",
+        "parents": [{"class": "tree_row", "attributes": ["selected"]}],
+        "font.bold": true,
+        "color": [255,8,0]//CANDY_APPLE
+    },
+    // Folder
+    {
+        "class": "sidebar_label",
+        "parents": [{"class": "tree_row", "attributes": ["expandable"]}],
+        "font.bold": true,
+        "color": [248,248,255]//GHOST_WHITE
+    },
+    {
+        "class": "sidebar_label",
+        "parents": [{"class": "tree_row", "attributes": ["expandable", "hover"]}],
+        "color": [255,8,0]//CANDY_APPLE
+    },
+    //================================================================================================================|
+    // SIDEBAR_GENERAL_FILE_ICONS
+    //
+    // Group closed
+    {
+        "class": "disclosure_button_control",
+        "content_margin": 0,
+        "layer0.texture": "Seti_UI/Main/tabset-right-hover@2x.png",
+        "layer0.inner_margin": 0,
+        "layer0.tint": [0,0,0],
+        "layer0.opacity": 1
+    },
+    // Group open
+    {
+        "class": "disclosure_button_control",
+        "attributes": ["expanded"],
+        "layer0.texture": "Seti_UI/Main/highlight@2x.png"
+    },
+    // Folder closed
+    {
+        "class": "icon_folder",
+        "layer0.texture": "Seti_UI/Main/circle@2x.png",
+        "layer0.opacity": 1,
+        "layer0.inner_margin": 0,
+        "content_margin": 0
+    },
+    // Folder opened
+    {
+        "class": "icon_folder",
+        "parents": [{"class": "tree_row", "attributes": ["expanded"]}],
+        "layer0.texture": "Seti_UI/Main/highlight@2x.png",
+        "layer0.opacity": 1,
+        "layer0.inner_margin": 0,
+        "content_margin": 0
+    },
+    // Animation folder icons
+    {
+        "class": "icon_folder",
+        "content_margin": 10,
+        "layer1.texture": "Seti_UI/Main/circle@2x.png",
+        "layer1.opacity": {"target": 0.0, "speed": 10.0, "interpolation": "smoothstep"},
+        "layer2.texture": "Seti_UI/Main/circle@2x.png",
+        "layer2.opacity": {"target": 0.0, "speed": 10.0, "interpolation": "smoothstep"},
+        "layer3.texture": "Seti_UI/Main/highlight@2x.png",
+        "layer3.opacity": {"target": 0.0, "speed": 10.0, "interpolation": "smoothstep"}
+    },
+    //================================================================================================================|
+    // STANDARD_TEXT_BUTTONS
+    //
+    // Default button state
+    {
+        "class": "button_control",
+        "layer0.opacity": {"target": 1.0, "speed": 10.0, "interpolation": "smoothstep"},
+        "layer0.tint": [242,161,4],
+        "min_size": [75,0],
+        "content_margin": [5,5]
+    },
+    // Hover button state
+    {
+        "class": "button_control",
+        "attributes": ["hover"],
+        "layer0.tint": [2,2,2]
+    },
+    // Pressed button state
+    {
+        "class": "button_control",
+        "attributes": ["pressed"],
+        "layer0.tint": [242,161,4]
+    },
+    //================================================================================================================|
+    // TEXT_INPUT_FIELD
+    //
+    {
+        "class": "text_line_control",
+        "layer0.tint": [242,161,4],
+        "layer0.opacity": {"target": 1.0, "speed": 10.0, "interpolation": "smoothstep"},
+        "content_margin": [2,0,0,0]
+    },
+    {
+        "class": "text_line_control",
+        "parents": [{"class": "overlay_control"}],
+        "content_margin": [10,20,10,20],
+        "layer0.texture": "Seti_UI/Main/menu/input_field_border--short.png",
+        "layer0.opacity": {"target": 0.0, "speed": 10.0, "interpolation": "smoothstep"},
+        "layer0.inner_margin": [-10,-1,-10,3]
+    },
+    //================================================================================================================|
+    // PANEL_BACKGROUNDS
+    //
+    // Quick panel background
+    {
+        "class": "overlay_control",
+        "layer0.texture": "Seti_UI/Main/menu/overlay-bg.png",
+        "layer0.inner_margin": [10, 0, 20, 40],
+        "layer0.opacity": {"target": 1.0, "speed": 10.0, "interpolation": "smoothstep"},
+        "content_margin": [10, 10, 0, 0]
+    },
+    {
+        "class": "overlay_control",
+        "layer0.texture": "Seti_UI/Main/menu/overlay-bg.png",
+        "layer0.inner_margin": [20, 0, 20, 40],
+        "layer0.opacity": {"target": 1.0, "speed": 10.0, "interpolation": "smoothstep"},
+        "content_margin": [13, 10, 13, 33]
+    },
+    // Bottom panel background
+    {
+        "class": "panel_control",
+        "layer0.opacity": {"target": 1.0, "speed": 10.0, "interpolation": "smoothstep"},
+        "layer0.tint": [0,0,0],
+        "content_margin": 0
+    },
+    //================================================================================================================|
+    // MINI_QUICK_PANEL (Win+Shift+P)
+    //
+    {
+        "class": "mini_quick_panel_row",
+        "layer0.tint": [15,19,23],
+        "layer0.opacity": {"target": 1.0, "speed": 10.0, "interpolation": "smoothstep"}
+    },
+    {
+        "class": "mini_quick_panel_row",
+        "attributes": ["hover"]
+    },
+    {
+        "class": "mini_quick_panel_row",
+        "attributes": ["selected"],
+        "layer0.tint": [48,61,74]
+    },
+    //================================================================================================================|
+    // QUICK_PANEL (Win+P)
+    //
+    {
+        "class": "quick_panel",
+        "row_padding": [10,12,10,11],
+        "layer0.tint": [15,19,23],
+        "layer0.opacity": {"target": 1.0, "speed": 10.0, "interpolation": "smoothstep"}
+    },
+    {
+        "class": "quick_panel_row",
+        "layer0.tint": [15,19,23],
+        "layer0.opacity": {"target": 1.0, "speed": 10.0, "interpolation": "smoothstep"}
+    },
+    {
+        "class": "quick_panel_row",
+        "parents": [{"class": "overlay_control"}],
+        "layer0.tint": [15,19,23],
+        "layer0.opacity": {"target": 1.0, "speed": 10.0, "interpolation": "smoothstep"}
+    },
+    {
+        "class": "quick_panel_row",
+        "attributes": ["hover"]
+    },
+    {
+        "class": "quick_panel_row",
+        "attributes": ["selected"],
+        "layer0.tint": [48,61,74]
+    },
+    {
+        "class": "quick_panel_label",
+        "fg": [0,0,0],
+        "selected_fg": [0,0,0],
+        "match_fg": [0,138,0],
+        "selected_match_fg": [0,223,0]
+    },
+    {
+        "class": "quick_panel_path_label",
+        "fg": [0,0,0],
+        "selected_fg": [0,0,0],
+        "match_fg": [0,0,0],
+        "selected_match_fg": [0,0,0]
+    },
+    {
+        "class": "quick_panel_score_label",
+        "fg": [0,0,0],
+        "selected_fg": [0,0,0]
+    },
+    //================================================================================================================|
+    // CODE_COMPLETING_DROPDOWN
+    //
+    {
+        "class": "popup_control",
+        "content_margin": 0,
+        "layer0.tint": [13,16,17],
+        "layer0.opacity": {"target": 1.0, "speed": 10.0, "interpolation": "smoothstep"}
+    },
+    {
+        "class": "auto_complete",
+        "row_padding": [0,4]
+    },
+    {
+        "class": "auto_complete_label",
+        "fg": [3,3,3],
+        "selected_fg": [3,3,3],
+        "match_fg": [0,153,0],
+        "selected_match_fg": [0,225,225]
+    },
+    {
+        "class": "table_row",
+        "layer0.opacity": {"target": 0.0, "speed": 10.0, "interpolation": "smoothstep"}
+    },
+    {
+        "class": "table_row",
+        "attributes": ["selected"],
+        "layer0.opacity": {"target": 1.0, "speed": 10.0, "interpolation": "smoothstep"},
+        "layer0.tint": [48,61,74]
+    },
+    //================================================================================================================|
+    // BOTTOM_PANEL_BUTTONS
+    //
+    // Button group middle
+    {
+        "class": "icon_button_control",
+        "layer0.opacity": {"target": 0.0, "speed": 10.0, "interpolation": "smoothstep"},
+        "content_margin": [6,5]
+    },
+    //
+    {
+        "class": "icon_button_control",
+        "attributes": ["selected"],
+        "layer1.tint": [32,40,66],
+        "layer0.opacity": {"target": 0.0, "speed": 10.0, "interpolation": "smoothstep"}
+    },
+    // Button group left
+    {
+        "class": "icon_button_control",
+        "attributes": ["left"]
+    },
+    {
+        "class": "icon_button_control",
+        "attributes": ["left","selected"]
+    },
+    // Button group right
+    {
+        "class": "icon_button_control",
+        "attributes": ["right"]
+    },
+    {
+        "class": "icon_button_control",
+        "attributes": ["right","selected"]
+    },
+    // Button single
+    {
+        "class": "icon_button_control",
+        "attributes": ["left","right"]
+    },
+    {
+        "class": "icon_button_control",
+        "attributes": ["left","right","selected"]
+    },
+    //================================================================================================================|
+    // BOTTOM_PANEL_ICONS__GROUP_1
+    //
+    // Regex search button
+    {
+        "class": "icon_regex",
+        "layer0.texture": "Seti_UI/Main/regex@2x.png",
+        "layer0.tint": [109,128,134],
+        "layer0.opacity": {"target": 1.0, "speed": 10.0, "interpolation": "smoothstep"},
+        "content_margin": 8
+    },
+    {
+        "class": "icon_regex",
+        "parents": [{"class": "icon_button_control","attributes": ["selected"]}],
+        "layer0.tint": [79,153,211]
+    },
+    {
+        "class": "icon_regex",
+        "parents": [{"class": "icon_button_control","attributes": ["hover"]}],
+        "layer0.tint": [0,0,0]
+    },
+    // Case sensitive search button
+    {
+        "class": "icon_case",
+        "layer0.texture": "Seti_UI/Main/casesens@2x.png",
+        "layer0.tint": [109,128,134],
+        "layer0.opacity": {"target": 1.0, "speed": 10.0, "interpolation": "smoothstep"},
+        "content_margin": 8
+    },
+    {
+        "class": "icon_case",
+        "parents": [{"class": "icon_button_control","attributes": ["selected"]}],
+        "layer0.tint": [79,153,211]
+    },
+    {
+        "class": "icon_case",
+        "parents": [{"class": "icon_button_control","attributes": ["hover"]}],
+        "layer0.tint": [0,0,0]
+    },
+    // Match whole word search button
+    {
+        "class": "icon_whole_word",
+        "layer0.texture": "Seti_UI/Main/wholeword@2x.png",
+        "layer0.tint": [109,128,134],
+        "layer0.opacity": {"target": 1.0, "speed": 10.0, "interpolation": "smoothstep"},
+        "content_margin": 8
+    },
+    {
+        "class": "icon_whole_word",
+        "parents": [{"class": "icon_button_control","attributes": ["selected"]}],
+        "layer0.tint": [79,153,211]
+    },
+    {
+        "class": "icon_whole_word",
+        "parents": [{"class": "icon_button_control","attributes": ["hover"]}],
+        "layer0.tint": [0,0,0]
+    },
+    //================================================================================================================|
+    // BOTTOM_PANEL_ICONS__GROUP_1__EXTENDED__FIND_IN_FILES
+    //
+    // Show search context button
+    {
+        "class": "icon_context",
+        "layer0.texture": "Seti_UI/Main/context@2x.png",
+        "layer0.tint": [109,128,134],
+        "layer0.opacity": {"target": 1.0, "speed": 10.0, "interpolation": "smoothstep"},
+        "content_margin": 8
+    },
+    {
+        "class": "icon_context",
+        "parents": [{"class": "icon_button_control","attributes": ["selected"]}],
+        "layer0.tint": [79,153,211]
+    },
+    {
+        "class": "icon_context",
+        "parents": [{"class": "icon_button_control","attributes": ["hover"]}],
+        "layer0.tint": [0,0,0]
+    },
+    // Use search buffer
+    {
+        "class": "icon_use_buffer",
+        "layer0.texture": "Seti_UI/Main/buffer@2x.png",
+        "layer0.tint": [109,128,134],
+        "layer0.opacity": {"target": 1.0, "speed": 10.0, "interpolation": "smoothstep"},
+        "content_margin": 8
+    },
+    {
+        "class": "icon_use_buffer",
+        "parents": [{"class": "icon_button_control","attributes": ["selected"]}],
+        "layer0.tint": [79,153,211]
+    },
+    {
+        "class": "icon_use_buffer",
+        "parents": [{"class": "icon_button_control","attributes": ["hover"]}],
+        "layer0.tint": [0,0,0]
+    },
+    //================================================================================================================|
+    // BOTTOM_PANEL_ICONS__GROUP_2
+    //
+    // Search wrap button
+    {
+        "class": "icon_wrap",
+        "layer0.texture": "Seti_UI/Main/wrap@2x.png",
+        "layer0.tint": [109,128,134],
+        "layer0.opacity": {"target": 1.0, "speed": 10.0, "interpolation": "smoothstep"},
+        "content_margin": 8
+    },
+    {
+        "class": "icon_wrap",
+        "parents": [{"class": "icon_button_control","attributes": ["selected"]}],
+        "layer0.tint": [79,153,211]
+    },
+    {
+        "class": "icon_wrap",
+        "parents": [{"class": "icon_button_control","attributes": ["hover"]}],
+        "layer0.tint": [0,0,0]
+    },
+    // Search in selection button
+    {
+        "class": "icon_in_selection",
+        "layer0.texture": "Seti_UI/Main/selection@2x.png",
+        "layer0.tint": [109,128,134],
+        "layer0.opacity": {"target": 1.0, "speed": 10.0, "interpolation": "smoothstep"},
+        "content_margin": 8
+    },
+    {
+        "class": "icon_in_selection",
+        "parents": [{"class": "icon_button_control","attributes": ["selected"]}],
+        "layer0.tint": [79,153,211]
+    },
+    {
+        "class": "icon_in_selection",
+        "parents": [{"class": "icon_button_control","attributes": ["hover"]}],
+        "layer0.tint": [0,0,0]
+    },
+    //================================================================================================================|
+    // BOTTOM_PANEL_ICONS__GROUP_3
+    //
+    // Preserve case button
+    {
+        "class": "icon_preserve_case",
+        "layer0.texture": "Seti_UI/Main/casesens@2x.png",
+        "layer0.tint": [109,128,134],
+        "layer0.opacity": {"target": 1.0, "speed": 10.0, "interpolation": "smoothstep"},
+        "content_margin": 8
+    },
+    {
+        "class": "icon_preserve_case",
+        "parents": [{"class": "icon_button_control","attributes": ["selected"]}],
+        "layer0.tint": [79,153,211]
+    },
+    {
+        "class": "icon_preserve_case",
+        "parents": [{"class": "icon_button_control","attributes": ["hover"]}],
+        "layer0.tint": [0,0,0]
+    },
+    //================================================================================================================|
+    // BOTTOM_PANEL_ICONS__GROUP_4
+    //
+    // Highlight results button
+    {
+        "class": "icon_highlight",
+        "layer0.texture": "Seti_UI/Main/highlight@2x.png",
+        "layer0.tint": [109,128,134],
+        "layer0.opacity": {"target": 1.0, "speed": 10.0, "interpolation": "smoothstep"},
+        "content_margin": 8
+    },
+    {
+        "class": "icon_highlight",
+        "parents": [{"class": "icon_button_control","attributes": ["selected"]}],
+        "layer0.tint": [79,153,211]
+    },
+    {
+        "class": "icon_highlight",
+        "parents": [{"class": "icon_button_control","attributes": ["hover"]}],
+        "layer0.tint": [0,0,0]
+    }
+]
