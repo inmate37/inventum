@@ -27,7 +27,7 @@ body a:hover{
 }
 /*--banner--*/
 .banner {
-    background:url(../images/background/banner.jpg)no-repeat center 0px;
+    background:url(../images/background/bg_top2.jpg)no-repeat center 0px;
     -webkit-background-size: cover;
     background-size: cover;
     -moz-background-size: cover;
@@ -44,11 +44,13 @@ body a:hover{
     letter-spacing: 6px;
     font-weight: 900;
 }
-.logo h1 a {
-    color: #FFF;
+.logo div a {
+    color: #000;
     text-decoration: none;
     display: block;
     line-height: 0.8em;
+    /*text-shadow: 0 0 0.5em #000, 0 0 0.5em #000, 0 0 0.5em #000;*/
+    background:url(../images/background/logo.jpg)no-repeat center 0px;
 }
 .logo h1 a:hover{
     color: #FFF;
@@ -76,7 +78,8 @@ ul.nav.navbar-right {
 .top-nav ul li a {
     text-decoration: none;
     font-size: 1.8em;
-    color: #FFF;
+    font-weight: bold;
+    color: #222;
     position: relative;
     padding: 0;
     font-family: Arial;
@@ -137,13 +140,15 @@ h2.bnr-title {
     padding: 0px 20px 0;
     letter-spacing: 7px;
     display: inline-block;
+    text-shadow: 0 0 0.5em #000, 0 0 0.5em #000, 0 0 0.5em #000;
 }
 .banner-text p {
-    font-size: 1.5em;
+    font-size: 1.8em;
     color: #FFF;
     letter-spacing: 7px;
-    line-height: 2.5em;
+    line-height: 3em;
     font-family: Arial;
+    text-shadow: 0 0 0.5em #000, 0 0 0.5em #000, 0 0 0.5em #000;
 }
 /*--//banner--*/
 /*--about--*/
@@ -342,7 +347,7 @@ p {
 /*--//services--*/
 /*--slid--*/
 .slid {
-    background: url(../images/background/custom.jpg)no-repeat center;
+    background: url(../images/background/bg_middle2.jpg)no-repeat center;
     background-size: cover;
     background-attachment: fixed;
     padding: 20em 0;
@@ -479,7 +484,7 @@ h2.resp-accordion {
     -moz-transform: translate3d(0,50px,0);
     -o-transform: translate3d(0,50px,0);
     -ms-transform: translate3d(0,50px,0);
-    padding: 21px 30px;
+    padding: 18px 30px;
     font-size: 1.5em;
     color: #FFF;
     letter-spacing: 1px;
@@ -538,28 +543,16 @@ h2.resp-accordion {
     margin: 0 0.5em;
 }
 .social-icons ul li a {
-    background: url(../images/social-icons.png)no-repeat 0px 0px;
+    background: url(../images/social-icons2.png)no-repeat 0px 0px;
     display: block;
-    height: 36px;
-    width: 35px;
+    height: 15em;
+    width: 12em;
     -webkit-transition: .5s all;
     transition: .5s all;
     -moz-transition: .5s all;
 }
-.social-icons ul li a.pin {
-    background-position: 0px -38px;
-}
-.social-icons ul li a.in {
-    background-position: 0px -76px;
-}
-.social-icons ul li a.be {
-    background-position: 0px -114px;
-}
-.social-icons ul li a.you {
-    background-position: 0px -152px;
-}
-.social-icons ul li a.vimeo {
-    background-position: 0px -192px;
+.social-icons ul li a.instagram {
+    background-position: -17em -7em;
 }
 .social-icons ul li a:hover{
     -webkit-transform:rotateY(360deg);
@@ -571,7 +564,7 @@ h2.resp-accordion {
 /*--//map--*/
 /*--contact--*/
 .contact{
-    background: url(../images/background/banner2.jpg)no-repeat center;
+    background: url(../images/background/bg_bottom3.JPG)no-repeat center;
     background-size: cover;
     background-attachment: fixed;
 }
@@ -589,7 +582,7 @@ h2.resp-accordion {
     color: #FFF;
 }
 .contact input[type="text"] {
-    width: 31.6%;
+    width: 30%;
     color: #FFF;
     float: left;
     background: none;
@@ -622,7 +615,7 @@ h2.resp-accordion {
     outline: none;
     color: #FFF;
     padding: 0.7em 5em;
-    font-size: 1.1em;
+    font-size: 1.6em;
     margin: 1em 0 0 0;
     -webkit-appearance: none;
     background: #FAA026;

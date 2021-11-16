@@ -290,8 +290,8 @@ html.swipebox-html.swipebox-touch {
 }
 
 #swipebox-top-bar {
-  color: white !important;
-  font-size: 15px;
+  color: #000;
+  font-size: 30px;
   line-height: 30px;
   font-family: Helvetica, Arial, sans-serif;
 }
